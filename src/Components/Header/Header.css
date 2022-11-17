@@ -1,0 +1,12 @@
+.num {
+    font-size: 1.3rem;
+    background-color: hsl(219, 85%, 26%);
+    color: #fff;
+    padding: 0rem 0.4rem;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    object-fit: contain;
+}
+

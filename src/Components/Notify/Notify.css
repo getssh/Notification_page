@@ -1,0 +1,27 @@
+.profile {
+    transform: scale(0.5);
+}
+
+.left-img {
+    transform: scale(0.4);
+}
+
+.notify {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    font-size: small;
+    background-color: hsl(210, 60%, 98%);
+    border-radius: 10%;
+    margin: 2rem 0rem;
+}
+
+.party, .name {
+    font-weight: 700;
+}
+
+.time {
+    width: 100%;
+    margin: -8% 0 0 12%;
+}
