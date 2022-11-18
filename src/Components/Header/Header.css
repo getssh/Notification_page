@@ -7,6 +7,9 @@
     font-weight: bold;
     border-radius: 5px;
     margin-left: 0.5rem;
+}
+
+.cont {
     object-fit: contain;
 }
 

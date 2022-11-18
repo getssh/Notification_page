@@ -3,15 +3,18 @@ import './Notify.css'
 
 export default function Notify (props) {
     return (
-        <div className='container'>
+        <div className='container mb-3'>
             <div className='notify'>
                 <img className='profile' src={props.profilePic}/>
-                <p className='name'>{`${props.name} ‎ `}</p>
-                <p className='mseg text-secondary'>{props.mesg}</p>
-                <p className='party text-secondary'>{`‎  ${props.party}`}</p>
+                <p>
+                <span className='name'>{`${props.name} ‎ `}</span> {props.mesg}
+                <span className='party text-secondary'>{`‎  ${props.party}`}</span>
+                </p>
                 {props.picture && <img className='left-img' src={props.likedPic}/>}
-                <p className='time text-secondary'>{props.time}</p>
+                {(!props.opened || !props.markedRead) && <span className='red'>.</span>}
+                <br />
             </div>
+                <p className='time text-secondary'>{props.time}</p>
         </div>
     )
 }

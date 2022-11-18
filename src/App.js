@@ -35,18 +35,30 @@ function App() {
   }
 
   return (
-    <div className="container col-lg-6 col-sm-12 bg-white mt-5">
+    <div className="container col-lg-6 col-sm-12 bg-white mt-5 mb-5 all">
       <Header title="Notifications" number="3"/>
-      <Notify profilePic={Mark}
-      name="Mark Webber"
-      mesg="reacted to your recent post"
-      party="My first tournament today!"
-      time="1m ago"
-      opened={toggle.isOpenisOpen}
-      markedRead={toggle.markAsRead}
-      picture={false}
-      likedPic={Chess}
-      />
+      <div className="not-contain">
+        <Notify profilePic={Mark}
+        name="Mark Webber"
+        mesg="reacted to your recent post"
+        party="My first tournament today!"
+        time="1m ago"
+        opened={true}
+        markedRead={toggle.markAsRead}
+        picture={false}
+        likedPic={Chess}
+        />
+        <Notify profilePic={Mark}
+        name="Mark Webber"
+        mesg="reacted to your recent post"
+        party="My first tournament today!"
+        time="1m ago"
+        opened={toggle.isOpen}
+        markedRead={toggle.markAsRead}
+        picture={false}
+        likedPic={Chess}
+        />
+      </div>
     </div>
   );
 }
