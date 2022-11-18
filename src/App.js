@@ -15,7 +15,8 @@ function App() {
 
   const [toggle, setToggle] = useState({
     isOpen: false,
-    markAsRead: false
+    markAsRead: false,
+    unreadCount: 3
   })
 
   function handelToggle() {
@@ -30,21 +31,31 @@ function App() {
   function handelAllRead() {
     setToggle(preToggle => ({
       ...preToggle,
-      markAsRead: !preToggle.markAsRead
+      markAsRead: !preToggle.markAsRead,
+      unreadCount: 0
     }))
   }
 
   return (
     <div className="container col-lg-6 col-sm-12 bg-white mt-5 mb-5 all">
-      <Header title="Notifications" number="3"/>
+      <Header
+      isReden={toggle.markAsRead}
+      handelAllRead={() => handelAllRead()}
+      title="Notifications"
+      number={toggle.unreadCount}
+      markRead="Mark all as"
+      />
       <div className="not-contain">
         <Notify profilePic={Mark}
         name="Mark Webber"
         mesg="reacted to your recent post"
         party="My first tournament today!"
         time="1m ago"
-        opened={true}
+        opened={toggle.isOpen}
         markedRead={toggle.markAsRead}
+        dm={true}
+        dmContent="Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
+        I'm already having lots of fun and improving my game."
         picture={false}
         likedPic={Chess}
         />
@@ -55,7 +66,8 @@ function App() {
         time="1m ago"
         opened={toggle.isOpen}
         markedRead={toggle.markAsRead}
-        picture={false}
+        dm={false}
+        picture={true}
         likedPic={Chess}
         />
       </div>

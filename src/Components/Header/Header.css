@@ -10,6 +10,13 @@
 }
 
 .cont {
+    display: flex;
     object-fit: contain;
+    padding-top: 1rem;
+    margin-bottom: -2.5rem;
+}
+
+.mark-read {
+    padding: 1rem;
 }
 

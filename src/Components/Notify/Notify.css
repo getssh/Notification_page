@@ -4,7 +4,7 @@
 
 .left-img {
     transform: scale(0.4);
-    margin: 0 0 0 -15px;
+    margin: 0 -2rem 0 -1rem;
 }
 
 /* .party::after {
@@ -12,12 +12,17 @@
     color: red;
     font-size: 5rem;
 } */
+.all {
+    background-color: hsl(210, 60%, 98%);
+    padding: 0 0 1rem 0;
+    cursor: pointer;
+}
 
 .notify {
+    height: fit-content;
     display: flex;
     align-items: center;
     font-size: small;
-    background-color: hsl(210, 60%, 98%);
     border-radius: 5%;
     padding: 0 0 1rem 0;
     margin: 0 0 1rem 0;
@@ -26,6 +31,10 @@
 
 .party, .name {
     font-weight: 700;
+}
+
+.name:hover, .party:hover {
+    color: hsl(219, 85%, 26%);
 }
 
 .time {
@@ -40,11 +49,24 @@
     margin-top: -2.5rem;
 }
 
-.not-contain {
+.dm {
+    width: 65%;
+    padding: 0.5rem 0 0 0.5rem;
+    margin: auto;
+    text-align: left;
     display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    background-color: #fff;
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
+
 }
+
+.dm:hover {
+    background-color: hsl(211, 68%, 94%);
+}
+
 @media screen and (max-width: 750px) {
     .time {
         margin: -12% 0 0 17%;
@@ -54,7 +76,7 @@
 
 @media screen and (max-width: 400px) {
     .time {
-        margin: -17% 0 0 17%;
+        margin: -17% 0 0 30%;
         font-size: 0.9rem;
     }
 }
