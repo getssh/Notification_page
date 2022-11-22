@@ -36,6 +36,12 @@ function App() {
     setNote(preNote => preNote.map((not) => {
       return id == not.id ? {...not, isOpen: !not.isOpen} : not;
     }))
+
+    if (count === 0) {
+      setAllReaden(false)
+    } else if (count === note.length) {
+      setAllReaden(true)
+    }
     // setToggle(preToggle => {
     //   return {
     //     ...preToggle,
