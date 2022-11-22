@@ -14,9 +14,11 @@
     object-fit: contain;
     padding-top: 1rem;
     margin-bottom: -2.5rem;
+    user-select: none;
 }
 
 .mark-read {
     padding: 1rem;
+    cursor: pointer;;
 }
 

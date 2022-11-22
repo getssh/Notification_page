@@ -3,20 +3,22 @@ import './Notify.css'
 
 export default function Notify (props) {
 
-    const idName = !(!props.opened || props.markedRead) ?
+    const idName = props.markedRead || props.opened ?
         "reden" : "not-reden";
     return (
-        <div className='container mb-3 all'
+        <div className={`${idName} container mb-3`}
         onClick={props.handelToggle}
         >
-            <div className='notify '>
+            <div className='notify'
+            onClick={props.handelToggle}
+            >
                 <img className='profile' src={props.profilePic}/>
                 <p>
                 <span className='name'>{`${props.name} ‎ `}</span> {props.mesg}
                 <span className='party text-secondary'>{`‎  ${props.party}`}</span>
                 </p>
                 {props.picture && <img className='left-img' src={props.likedPic}/>}
-                {!props.markedRead && <span className='red'>.</span>}
+                {!(props.markedRead || props.opened) && <span className='red'>.</span>}
                 <br />
             </div>
                 <p className='time text-secondary'>{props.time}</p>
