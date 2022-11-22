@@ -14,8 +14,8 @@ function App() {
   })
 
   const [note, setNote] = useState(Data)
-
   const [count, setCount] = useState(0)
+  const [allReaden, setAllReaden] = useState(false)
 
   useEffect(() => {
       function countNottification() {
@@ -47,20 +47,19 @@ function App() {
   function handelAllRead() {
     let allReaden = note.every(not => not.isOpen === true)
     if (allReaden) {
+      setNote(preNote => preNote.map(note => ({
+        ...note,
+        isOpen: false,
+      })))
       setCount(0)
-      
-      setToggle(preToggle => ({
-        ...preToggle,
-        markAsRead: true,
-      }))
+      setAllReaden(preVal => !preVal)
     } else {
+      setNote(preNote => preNote.map(note => ({
+        ...note,
+        isOpen: true
+      })))
       setCount(note.length)
-      setToggle(preToggle => (
-        {
-          ...preToggle,
-          markAsRead: false,
-        }
-      ))
+      setAllReaden(preVal => !preVal)
     }
     // setCount(count <= 0 ? note.length : 0)
   }
@@ -85,40 +84,13 @@ function App() {
   return (
     <div className="container col-lg-6 col-sm-12 bg-white mt-5 mb-5 all">
       <Header
-      isReden={toggle.markAsRead}
+      isReden={allReaden}
       handelAllRead={() => handelAllRead()}
       title="Notifications"
       number={count}
       markRead="Mark all as"
       />
       <div className="not-contain">
-        {/* <Notify
-        profilePic={Mark}
-        onClick={(id) => handelToggle(id)}
-        name="Mark Webber"
-        mesg="reacted to your recent post"
-        party="My first tournament today!"
-        time="1m ago"
-        opened={toggle.isOpen}
-        markedRead={toggle.markAsRead}
-        dm={true}
-        dmContent="Hello, thanks for setting up the Chess Club. I've been a member for a few weeks now and 
-        I'm already having lots of fun and improving my game."
-        picture={false}
-        likedPic={Chess}
-        />
-        <Notify
-        profilePic={Mark}
-        name="Mark Webber"
-        mesg="reacted to your recent post"
-        party="My first tournament today!"
-        time="1m ago"
-        opened={toggle.isOpen}
-        markedRead={toggle.markAsRead}
-        dm={false}
-        picture={true}
-        likedPic={Chess}
-        /> */}
         {showNote}
       </div>
     </div>

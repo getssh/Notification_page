@@ -3,7 +3,7 @@ import './Notify.css'
 
 export default function Notify (props) {
 
-    const idName = props.markedRead || props.opened ?
+    const idName = props.opened ?
         "reden" : "not-reden";
     return (
         <div className={`${idName} container mb-3`}
